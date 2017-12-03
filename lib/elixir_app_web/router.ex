@@ -44,7 +44,7 @@ defmodule ElixirAppWeb.Router do
   scope "/", ElixirAppWeb do
     pipe_through :protected
 
-    resources "/privates", ElixirAppWeb.PrivateController
+    resources "/privates", PrivateController
   end
 
   scope "/admin", ExAdmin do
