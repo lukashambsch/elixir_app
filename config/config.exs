@@ -48,7 +48,8 @@ config :ex_admin,
   repo: ElixirApp.Repo,
   module: ElixirAppWeb,
   modules: [
-    ElixirApp.ExAdmin.Dashboard
+    ElixirApp.ExAdmin.Dashboard,
+    ElixirApp.ExAdmin.Coherence.User
   ]
 
 config :xain, :after_callback, {Phoenix.HTML, :raw}
