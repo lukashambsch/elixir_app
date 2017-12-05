@@ -31,7 +31,7 @@ exports.config = {
         "css/active_admin.css.css": ["vendor/active_admin.css.css"],
       },
       order: {
-        after: ["css/app.css"] // concat app.css last
+        after: ["priv/static/css/app.scss"] // concat app.css last
       }
     },
     templates: {
@@ -59,6 +59,18 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/vendor/]
+    },
+    copycat: {
+      // copy node_modules/font-awesome/fonts/* to priv/static/fonts
+      "fonts": ["node_modules/font-awesome/fonts"]
+    },
+    sass: {
+      options: {
+        // tell sass-brunch where to look for files to @import
+        includePaths: ["node_modules/font-awesome/scss", "node_modules/bulma"],
+        // minimum precision required by bootstrap
+        precision: 8
+      }
     }
   },
 
@@ -72,7 +84,6 @@ exports.config = {
     enabled: true
   }
 };
-
 // To add the ExAdmin generated assets to your brunch build, do the following:
 //
 // Replace
