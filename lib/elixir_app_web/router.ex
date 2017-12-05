@@ -44,12 +44,9 @@ defmodule ElixirAppWeb.Router do
   scope "/", ElixirAppWeb do
     pipe_through :protected
 
-    resources "/privates", PrivateController
-  end
-
-  scope "/admin", ExAdmin do
-    pipe_through :browser
-    admin_routes()
+    scope "/admin", ExAdmin do
+      admin_routes()
+    end
   end
 
   # Other scopes may use custom stacks.
